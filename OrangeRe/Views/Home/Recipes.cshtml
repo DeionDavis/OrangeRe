@@ -1,0 +1,51 @@
+﻿@using OrangeRe.Models.Recipes
+@using System.Web.Mvc
+
+
+@model IEnumerable<Recipes>
+@{
+    ViewBag.Title = "Orange Recipes";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<div id="content">
+    <div class="inner container_12 clearfix">
+        <div id="main" class="grid_7">
+            <h3>@ViewBag.Message</h3>
+            <p>Here you can see recipes using Orange</p>
+            <table style="width:100%;">
+                @foreach (Recipes rec in @Model)
+                {
+                    <tr>
+                        <td style="width:25%;">
+                            <img src="~/Content/RecipiesImg/R1.jpg" width="120" height="120" class="imgborder" style="align-content:flex-start;" />
+                        </td>
+                        <td style="width:80%;">
+                            <h5>@rec.RecipesID. @rec.RecipesName</h5>
+                            <p>@rec.Description</p>
+                        </td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+
+        <div id="sidebar" class="grid_5">
+            <div class="inner">
+                <div id="address" class="clearfix" style="font-size:medium; color:blue;">
+                    <ul>
+                        <li><a href="@Url.Action("Create")" style="color:blue;font-size:medium;">Add New Recipe</a></li>
+                    </ul>
+                </div>
+                <div id="address" class="clearfix">
+                    @foreach(Recipes rec in Model)
+                    {
+                        <ul>
+                            <li><a href="" style="color:darkblue; font-size:medium;">@rec.RecipesName </a></li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

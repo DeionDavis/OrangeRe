@@ -1,0 +1,73 @@
+﻿@model OrangeRe.Models.Recipes.Recipes
+
+@{
+    ViewBag.Title = "Add Your Recipe here";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+
+<div id="content">
+    <div class="inner container_12 clearfix">
+        <div id="main" class="grid_8">
+            <h2>Add Recipes</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h4>Fill Below Details to add Recipes</h4>
+                <hr />
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RecipesName, htmlAttributes: new { @class = "control-label col-md-2"  })
+                        <br />
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.RecipesName, htmlAttributes: new {@style= "width:600px; font-family:Cambria; font-size:medium;" })
+                            @Html.ValidationMessageFor(model => model.RecipesName)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <br />
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Description,htmlAttributes:new {@style= "width:600px; height:300px; font-family:Cambria; font-size:medium;" })
+                            
+                            @Html.ValidationMessageFor(model => model.Description)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RecipesImg, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <br />
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.RecipesImg,htmlAttributes:new {@style= "width:600px; font-family:Cambria; font-size:medium;"})
+                            @Html.ValidationMessageFor(model => model.RecipesImg)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <br />
+                            <input type="submit" value="Create" class="btn btn-default" style="width:125px; height:40px;" />
+                        </div>
+                    </div>
+            }
+        </div>
+
+        <div id="sidebar" class="grid_4">
+            <div class="inner">
+                <div id="address">
+                    <h3>Steps to Add Oranges Recipes</h3>
+                    <p>
+                        <ul>
+                            <li>Enter your Recipe name or the name that you like to give</li>
+                            <li>Enter each and every details to create your recipes and explain steps to create.</li>
+                            <li>Enter image for the recipe.</li>
+                            <li>Click Ok to submit your recipe</li>
+                        </ul>
+                        Now your recipe will display to the people who visit this site. Also they can rate your recipe so you can improve your recipe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

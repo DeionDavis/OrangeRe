@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="apple-touch-icon" href="" type="image/x-icon" />
+    <meta charset="utf-8" />
+    @*Header files*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Orench/")css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Orench/")css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Orench/")css/grid.css" type="text/css" media="screen" />
+    <style>
+        #txtName {
+            width: 200px;
+            height: 20px;
+            font-family: Cambria;
+            font-size: medium;
+        }
+
+        #txtRecipName {
+            width: 500px;
+            height: 20px;
+            font-family: Cambria;
+            font-size: medium;
+        }
+
+        #txtItemName {
+            width: 500px;
+            height: 20px;
+            font-family: Cambria;
+            font-size: medium;
+        }
+
+        #id {
+            width: 200px;
+            height: 20px;
+            font-family: Cambria;
+            font-size: medium;
+        }
+
+        #btnadd {
+            background-color: transparent;
+            border: none;
+            color: black;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: medium;
+            width: 100px;
+            font-size: medium;
+            font-family: Cambria;
+            border: 2px solid black;
+        }
+
+            #btnadd:hover span {
+                padding-right: 25px;
+            }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="inner container_12 clearfix">
+            <div id="logo" class="grid_5">
+                <h1><a href="@Url.Action("Index")" title="Website Name">Orange<span class="black">(Fruit)</span></a></h1>
+                <p id="slogan">Know about me.....</p>
+            </div><!-- end logo -->
+        </div><!-- end header inner -->
+    </div>
+    <div id="nav" class="container_12 clearfix">
+        <ul>
+            <li><a href="@Url.Action("Index")">Home</a></li>
+            <li><a href="@Url.Action("ReadMore")">Read More</a></li>
+            <li><a href="@Url.Action("Recipes")">Recipes</a></li>
+            <li><a href="@Url.Action("Trade")">Trading</a></li>
+            <li><a href="@Url.Action("Contact")">Contact Us</a></li>
+            @*<li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></li>*@
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <div class="inner container_12 clearfix">
+            <p>
+                Copyright  2012. <!-- Please Do not remove -->Template by <a href="http://www.electrictowelrail.org.uk/chrome-towel-radiator/" target="_blank">Chrome Towel Radiator</a><!-- end --><br>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a>
+            </p>
+        </div><!-- end footer inner -->
+    </div>
+</body>
+</html>

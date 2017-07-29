@@ -1,0 +1,83 @@
+﻿@using OrangeRe.Models
+@using System.Web.Mvc
+
+@model IEnumerable<Details>
+    @{
+        ViewBag.Title = "Home Page";
+        Layout = "~/Views/Shared/_Home.cshtml";
+    }
+
+    <div id="content">
+        <div class="inner container_12 clearfix">
+            <div id="main" class="grid_8">
+                <h3>Introduction</h3>
+                <p><strong>Brief description about me</strong></p>
+
+                <p>The orange is the fruit of the citrus species Citrus × sinensis in the family Rutaceae. The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange.</p>
+                <p>The sweet orange reproduces asexually; varieties of sweet orange arise through mutations.</p>
+                <p><a target="_blank" href="https://en.wikipedia.org/wiki/Orange_(fruit)">en.wikipedia.org</a> Text under <a target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA license</a></p>
+
+                <div id="home-bottom" class="clearfix">
+
+                    <h3>Detailed Description</h3>
+
+                    <div id="col1" class="grid_7">
+                        <h5>The orange (the sweet orange) is the fruit of the <a target="_blank" href="https://en.wikipedia.org/wiki/Citrus">citrus</a> species Citrus × sinensis in the family Rutaceae.</h5>
+
+                        <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange.</p>
+                        <p>The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
+                        <p>The orange is a hybrid, between pomelo (Citrus maxima) and mandarin (Citrus reticulata). It has genes that are ~25% pomelo and ~75% mandarin; however, it is not a simple backcrossed BC1 hybrid, but hybridized over multiple generations. The chloroplast genes, and therefore the maternal line, seem to be pomelo.The sweet orange has had its full genome sequenced. Earlier estimates of the percentage of pomelo genes varying from ~50% to 6% have been reported.</p>
+                        <p>Sweet oranges were mentioned in Chinese literature in 314 BC. As of 1987, orange trees were found to be the most cultivated fruit tree in the world. Orange trees are widely grown in tropical and subtropical climates for their sweet fruit. The fruit of the orange tree can be eaten fresh, or processed for its juice or fragrant peel.[6] As of 2012, sweet oranges accounted for approximately 70% of citrus production.</p>
+                        <p>In 2013, 71.4 million metric tons of oranges were grown worldwide, production being highest in Brazil and the U.S. states of Florida and California.</p>
+                    </div>
+
+                    <div id="col2" class="grid_7">
+                        <h4>Botanical information and terminology</h4>
+
+                        <p>All citrus trees belong to the single genus Citrus and remain almost entirely interfertile. This means that there is only one superspecies that includes grapefruits, lemons, limes, oranges, and various other types and hybrids. As the interfertility of oranges and other citrus has produced numerous hybrids and cultivars, and bud mutations have also been selected, their taxonomy is fairly controversial, confusing or inconsistent. The fruit of any citrus tree is considered a hesperidium, a kind of modified berry; it is covered by a rind originated by a rugged thickening of the ovary wall.</p>
+                        <p><a href="@Url.Action("ReadMore")">Read More</a></p>
+                    </div>
+
+
+
+                </div><!-- end home-bottom -->
+
+            </div><!-- end main -->
+            <div id="sidebar" class="grid_4">
+                <div class="inner">
+
+                    <img src="Content/Orench/images/image1.jpg" width="294" height="200" alt="image" class="imgborder">
+
+                    <div id="address">
+                        <h3>Nutrients</h3>
+                        <table border="1" style="text-align:left;margin-left:auto;margin-right:0px;">
+                            <tbody style="border: solid;">
+                                <tr>
+                                    <th style="border:solid; width:101px; background-color:green;">Principle</th>
+                                    <th style="border: solid; width: 68px; background-color: green;">
+                                        Nutrient
+                                        Value
+                                    </th>
+                                    <th style="border: solid; width: 89px; background-color: green;">
+                                        Percentage
+                                        of
+                                        RDA
+                                    </th>
+                                </tr>
+                                @foreach (Details org in @Model)
+                                {
+                                    <tr>
+                                        <td style="border: solid; width: 101px; background-color:darkslategrey;">@org.Principle</td>
+                                        <td style="border: solid; width: 68px; background-color:darkslategrey;">@org.Nutrient</td>
+                                        <td style="border: solid; width: 89px; background-color: darkslategrey; ">@org.Percent</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div><!-- end address -->
+                </div><!-- end sidebar inner -->
+
+            </div><!-- end sidebar -->
+        </div><!-- end content inner -->
+    </div>
