@@ -14,8 +14,12 @@ namespace OrangeRe.Models.Recipes
         /// <summary>
         /// This is used to display the recorded recipes into the web page
         /// </summary>
+        /// 
+        
         public int RecipesID { get; set; }
+        [Required(ErrorMessage = "Recipes Name Required")]
         public string RecipesName { get; set; }
+        [Required(ErrorMessage = "Recipes Name Required")]
         public string Description { get; set; }
         public string RecipesImg { get; set; }
     }

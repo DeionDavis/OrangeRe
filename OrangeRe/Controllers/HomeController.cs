@@ -64,19 +64,28 @@ namespace OrangeRe.Controllers
             //    Response.Write("<br/>");
             //}
         }
-
+        [AcceptVerbs(HttpVerbs.Post)]
         [HttpPost]
-        public ActionResult Create(FormCollection formCollection)
+        public ActionResult Create(Recipes model)
         {
-            Recipes res = new Recipes();
-            res.RecipesName = formCollection["RecipesName"];
-            res.Description = formCollection["Description"];
-            res.RecipesImg = formCollection["RecipesImg"];
 
+            Recipes res = new Recipes();
             Registration reg = new Registration();
-            reg.Proc_Orange_RecipeInsert(res);
-            return RedirectToAction("Recipes");
-            
+            if (ModelState.IsValid)
+            {
+                res.RecipesName = model.RecipesName;
+                res.Description = model.Description;
+                res.RecipesImg = model.RecipesImg;
+                reg.Proc_Orange_RecipeInsert(res);
+                return RedirectToAction("Recipes");
+            }
+            else
+            {
+                return RedirectToAction("Create");
+            }
+            //res.RecipesName = formCollection["RecipesName"];
+            //res.Description = formCollection["Description"];
+            //res.RecipesImg = formCollection["RecipesImg"];
             //return View();
         }
 
