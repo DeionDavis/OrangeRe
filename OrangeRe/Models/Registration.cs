@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
+﻿using System.Data;
 using Trio.DAL;
 using OrangeRe.Models.Recipes;
 
@@ -10,12 +6,13 @@ namespace Trio.BAL
 {
     public class Registration
     {
-
-        #region VARIABLES
         DBService ObjDB = new DBService();
-        #endregion
 
-        #region Insert
+        /// <summary>
+        /// Method to insert recipe
+        /// </summary>
+        /// <param name="res"><see cref="Recipes"/></param>
+        /// <returns>Return employ details</returns>
         public DataTable Proc_Orange_RecipeInsert(Recipes res)
         {
             DataTable dtEmpDetails = new DataTable();
@@ -27,7 +24,5 @@ namespace Trio.BAL
             dtEmpDetails = ObjDB.GetDataTableSP("Proc_Orange_RecipeInsert");
             return dtEmpDetails;
         }
- 
-        #endregion
     }
 }

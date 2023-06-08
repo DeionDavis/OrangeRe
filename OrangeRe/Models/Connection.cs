@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
-using OrangeRe.Models.Recipes;
+﻿using System.Data.Entity;
 
 namespace OrangeRe.Models
 {
@@ -14,9 +9,9 @@ namespace OrangeRe.Models
         /// The name of this class name same as the name of the connection in web.config
         /// </summary>
         public DbSet<Details> details { get; set; }
-        
-       public System.Data.Entity.DbSet<OrangeRe.Models.Recipes.Recipes> Recipes { get; set; }
-
-
+        /// <summary>
+        /// Recipes Db set
+        /// </summary>
+        public DbSet<Recipes.Recipes> Recipes { get; set; }
     }
 }
